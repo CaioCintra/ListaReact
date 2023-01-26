@@ -17,7 +17,7 @@ export default function App() {
     const newTask = {
       id: generateId(),
       title,
-      state
+      state,
     };
     setTasks((existingTasks) => {
       return [...existingTasks, newTask];
