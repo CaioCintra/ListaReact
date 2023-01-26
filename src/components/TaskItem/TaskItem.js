@@ -7,7 +7,7 @@ export default function TaskItem({
   title,
   taskState,
   onTaskUpdate,
-  onDeleteTask
+  onDeleteTask,
 }) {
   const [isEditing, setIsEditing] = useState(false);
   const [editableTitle, setEditableTitle] = useState(title);
@@ -40,17 +40,17 @@ export default function TaskItem({
           onChange={onTitleChange}
           onKeyPress={onKeyPress}
         />
+        <select onChange={onTaskStateChange} value={taskState}>
+          <option value="Pendente">Pendente</option>
+          <option value="Fazendo">Fazendo</option>
+          <option value="Completa">Completa</option>
+        </select>
       </div>
     );
   } else {
     return (
       <div className="task-item">
         <div onClick={(e) => setIsEditing(true)}>{editableTitle}</div>
-        <select onChange={onTaskStateChange} value={taskState}>
-          <option value="Pendente">Pendente</option>
-          <option value="Fazendo">Fazendo</option>
-          <option value="Completa">Completa</option>
-        </select>
       </div>
     );
   }
@@ -61,5 +61,5 @@ TaskItem.propTypes = {
   title: PropTypes.string.isRequired,
   taskState: PropTypes.string.isRequired,
   onTaskUpdate: PropTypes.func.isRequired,
-  onDeleteTask: PropTypes.func.isRequired
+  onDeleteTask: PropTypes.func.isRequired,
 };

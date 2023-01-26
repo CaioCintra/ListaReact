@@ -11,7 +11,7 @@ export default function TaskList({
   onAddTask,
   tasks,
   onTaskUpdate,
-  onDeleteTask
+  onDeleteTask,
 }) {
   const addTask = () => {
     onAddTask("Nova Tarefa", taskState);
@@ -48,5 +48,5 @@ TaskList.propTypes = {
   onAddTask: PropTypes.func.isRequired,
   tasks: PropTypes.array.isRequired,
   onTaskUpdate: PropTypes.func.isRequired,
-  onDeleteTask: PropTypes.func.isRequired
+  onDeleteTask: PropTypes.func.isRequired,
 };
